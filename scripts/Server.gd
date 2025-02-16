@@ -1,25 +1,26 @@
+# Server.gd
 extends Node
 
 var server = null
-var clients = []
+var connected_clients = []
 
-# Start the server when the game starts
 func _ready():
-	server = NetfoxServer.new()
-	server.listen(12345)  # Port 12345 for the server
-	print("Server started on port 12345")
+    server = NetworkedMultiplayerENet.new()
+    server.create_server(12345, 10)  # Port 12345, max 10 clients
+    get_tree().network_peer = server
+    print("Server started on port 12345")
 
-# Handle new client connection
-func on_client_connect(client):
-	clients.append(client)
-	print("New client connected: ", client)
+func _on_peer_connected(id):
+    print("Client connected: " + str(id))
+    connected_clients.append(id)
 
-# Handle incoming messages from clients
-func on_message_received(client, message):
-	print("Received message: ", message)
-	# Process game actions like player movements, attacks, etc.
+func _on_peer_disconnected(id):
+    print("Client disconnected: " + str(id))
+    connected_clients.erase(id)
 
-# Send data to all clients (for syncing)
-func broadcast(message):
-	for client in clients:
-		client.send(message)
+func _process(delta):
+    for client_id in connected_clients:
+        rpc_id(client_id, "_sync_player_data", get_player_data())
+
+remote func _sync_player_data(data):
+    print("Syncing player data to client")

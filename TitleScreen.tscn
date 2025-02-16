@@ -1,23 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://dr7dtscem716r"]
+[gd_scene load_steps=6 format=3 uid="uid://dr7dtscem716r"]
 
 [ext_resource type="Script" path="res://PlayButton.cs" id="1_7fo7m"]
 [ext_resource type="Script" path="res://title_screen.gd" id="1_rryv7"]
 [ext_resource type="Texture2D" uid="uid://bisce0ewgtn7c" path="res://TitleScreen.png" id="2_4d4oj"]
+[ext_resource type="Texture2D" uid="uid://buynjxx152drl" path="res://download.jpg" id="2_vggi2"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_2ob8w"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rryv7")
 
-[node name="Button" type="Button" parent="."]
+[node name="Download" type="Sprite2D" parent="."]
+position = Vector2(575, 328)
+scale = Vector2(1.494, 1.275)
+texture = ExtResource("2_vggi2")
+
+[node name="Join" type="Button" parent="."]
 offset_left = 255.0
-offset_top = 411.0
+offset_top = 526.0
 offset_right = 841.0
-offset_bottom = 556.0
-text = "Play "
+offset_bottom = 598.5
+text = "Join Server"
 script = ExtResource("1_7fo7m")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Host" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 319.0
+offset_right = 842.0
+offset_bottom = 464.0
+text = "Host Server"
+script = ExtResource("1_7fo7m")
+
+[node name="Logo" type="Sprite2D" parent="."]
 position = Vector2(564, 279)
 scale = Vector2(0.508333, 0.508333)
 texture = ExtResource("2_4d4oj")
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="LineEdit" type="LineEdit" parent="."]
+offset_left = 256.0
+offset_top = 476.0
+offset_right = 842.0
+offset_bottom = 507.0
+scale = Vector2(1, 1.162)
+size_flags_horizontal = 8
+placeholder_text = "Server IP"
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ImageTexture_2ob8w")
+
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]

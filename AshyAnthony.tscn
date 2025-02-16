@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqvx2dxc1tbu8"]
+[gd_scene load_steps=6 format=3 uid="uid://cqvx2dxc1tbu8"]
 
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="1_6kcnp"]
 [ext_resource type="Texture2D" uid="uid://vansxk3c0enh" path="res://ForsakenTiles.png" id="1_a31xw"]
 [ext_resource type="SpriteFrames" uid="uid://bn2uto3asd0sv" path="res://effect_animations/all_animations.tres" id="2_r3y6n"]
 
@@ -117,7 +118,8 @@ tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_h7suj")
 
-[node name="trap-room" type="Node2D"]
+[node name="game" type="Node2D"]
+script = ExtResource("1_6kcnp")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_8fgbv")
