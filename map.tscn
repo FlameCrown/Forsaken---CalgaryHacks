@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bh2bpq2ila4o"]
+
+[ext_resource type="Script" path="res://map.gd" id="1_xr7jr"]
+[ext_resource type="PackedScene" uid="uid://dhbsn20ijciit" path="res://Freash.tscn" id="2_hmkod"]
+
+[node name="Map" type="Node2D"]
+script = ExtResource("1_xr7jr")
+scene_to_instantiate = ExtResource("2_hmkod")

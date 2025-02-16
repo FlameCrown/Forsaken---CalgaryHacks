@@ -1,0 +1,144 @@
+[gd_scene load_steps=4 format=3 uid="uid://djy03m5xts18w"]
+
+[ext_resource type="Texture2D" uid="uid://vansxk3c0enh" path="res://ForsakenTiles.png" id="1_he2nj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbcox"]
+resource_name = "<null>"
+texture = ExtResource("1_he2nj")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 8)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 8)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 8)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 8)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 8)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 8)
+6:0/0 = 0
+6:0/0/texture_origin = Vector2i(0, 8)
+7:0/0 = 0
+7:0/0/texture_origin = Vector2i(0, 8)
+8:0/0 = 0
+8:0/0/texture_origin = Vector2i(0, 8)
+9:0/0 = 0
+9:0/0/texture_origin = Vector2i(0, 8)
+10:0/0 = 0
+10:0/0/texture_origin = Vector2i(0, 8)
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 8)
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -8, 16, -16, 0, -24)
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 8)
+2:1/0 = 0
+2:1/0/texture_origin = Vector2i(0, 8)
+3:1/0 = 0
+3:1/0/texture_origin = Vector2i(0, 8)
+4:1/0 = 0
+4:1/0/texture_origin = Vector2i(0, 8)
+5:1/0 = 0
+5:1/0/texture_origin = Vector2i(0, 8)
+6:1/0 = 0
+6:1/0/texture_origin = Vector2i(0, 8)
+7:1/0 = 0
+7:1/0/texture_origin = Vector2i(0, 8)
+8:1/0 = 0
+8:1/0/texture_origin = Vector2i(0, 8)
+9:1/0 = 0
+9:1/0/texture_origin = Vector2i(0, 8)
+10:1/0 = 0
+10:1/0/texture_origin = Vector2i(0, 8)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 8)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 8)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, 8)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 8)
+4:2/0 = 0
+4:2/0/texture_origin = Vector2i(0, 8)
+5:2/0 = 0
+5:2/0/texture_origin = Vector2i(0, 8)
+6:2/0 = 0
+6:2/0/texture_origin = Vector2i(0, 8)
+7:2/0 = 0
+7:2/0/texture_origin = Vector2i(0, 8)
+8:2/0 = 0
+8:2/0/texture_origin = Vector2i(0, 8)
+9:2/0 = 0
+9:2/0/texture_origin = Vector2i(0, 8)
+10:2/0 = 0
+10:2/0/texture_origin = Vector2i(0, 8)
+11:2/0 = 0
+11:2/0/texture_origin = Vector2i(0, 8)
+0:3/0 = 0
+0:3/0/texture_origin = Vector2i(0, 8)
+1:3/0 = 0
+1:3/0/texture_origin = Vector2i(0, 8)
+2:3/0 = 0
+2:3/0/texture_origin = Vector2i(0, 8)
+3:3/0 = 0
+3:3/0/texture_origin = Vector2i(0, 8)
+4:3/0 = 0
+4:3/0/texture_origin = Vector2i(0, 8)
+5:3/0 = 0
+5:3/0/texture_origin = Vector2i(0, 8)
+6:3/0 = 0
+6:3/0/texture_origin = Vector2i(0, 8)
+7:3/0 = 0
+7:3/0/texture_origin = Vector2i(0, 8)
+8:3/0 = 0
+8:3/0/texture_origin = Vector2i(0, 8)
+9:3/0 = 0
+9:3/0/texture_origin = Vector2i(0, 8)
+10:3/0 = 0
+10:3/0/texture_origin = Vector2i(0, 8)
+11:3/0 = 0
+11:3/0/texture_origin = Vector2i(0, 8)
+8:4/0 = 0
+8:4/0/texture_origin = Vector2i(0, 8)
+9:4/0 = 0
+9:4/0/texture_origin = Vector2i(0, 8)
+10:4/0 = 0
+10:4/0/texture_origin = Vector2i(0, 8)
+11:4/0 = 0
+11:4/0/texture_origin = Vector2i(0, 8)
+
+[sub_resource type="TileSet" id="TileSet_ay3ax"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nbcox")
+
+[node name="Corridor" type="Node2D"]
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ay3ax")
+collision_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(65536, 131072, 0, -524288, 131072, 0, -458752, 131072, 0, -393216, 131072, 0, -327680, 131072, 0, -262144, 131072, 0, -196608, 131072, 0, -131072, 131072, 0, -65536, 131072, 0, 0, 131072, 0, -524287, 131072, 0, -458751, 131072, 0, -393215, 131072, 0, -327679, 131072, 0, -262143, 131072, 0, -196607, 131072, 0, -131071, 131072, 0, -65535, 131072, 0, 1, 131072, 0, 65537, 131072, 0, -524286, 131072, 0, -458750, 131072, 0, -393214, 131072, 0, -327678, 131072, 0, -262142, 131072, 0, -196606, 131072, 0, -131070, 131072, 0, -65534, 131072, 0, 2, 131072, 0, 65538, 131072, 0)
+layer_1/name = "Layer1"
+layer_1/tile_data = PackedInt32Array(65534, 131072, 0, -2, 131072, 0, -65538, 131072, 0, -131074, 131072, 0, -196610, 131072, 0, -262146, 131072, 0, -327682, 131072, 0, -393218, 131072, 0, -458754, 131072, 0, -524290, 131072, 0)
+layer_2/name = "Layer2"
+layer_2/tile_data = PackedInt32Array(-3, 131072, 0, -65539, 131072, 0, -131075, 131072, 0, -196611, 131072, 0, -262147, 131072, 0, -327683, 131072, 0, -393219, 131072, 0, -458755, 131072, 0, -524291, 131072, 0, -589827, 131072, 0)
+layer_3/name = "Layer3"
+layer_3/tile_data = PackedInt32Array(-65540, 131072, 0, -196612, 131072, 0, -131076, 131072, 0, -262148, 131072, 0, -327684, 131072, 0, -393220, 131072, 0, -458756, 131072, 0, -524292, 131072, 0, -589828, 131072, 0, -655364, 131072, 0)
+layer_4/name = "Layer4"
+layer_4/tile_data = PackedInt32Array(-131077, 131072, 0, -196613, 131072, 0, -262149, 131072, 0, -327685, 131072, 0, -393221, 131072, 0, -458757, 131072, 0, -524293, 131072, 0, -589829, 131072, 0, -655365, 131072, 0, -720901, 131072, 0)
+
+[node name="Area2D" type="Area2D" parent="TileMap2"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="TileMap2/Area2D"]
+position = Vector2(128, -64)
+polygon = PackedVector2Array(-14, 0, 32, 24, 64, 8, 17, -16)
+
+[node name="Area2D2" type="Area2D" parent="TileMap2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TileMap2/Area2D2"]
+polygon = PackedVector2Array(-14, 0, 32, 24, 64, 8, 17, -16)

@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://mjvjkvvjaelm"]
+
+[ext_resource type="Texture2D" uid="uid://dntoh61plrek0" path="res://skelly boy.tres" id="1_xwx77"]
+[ext_resource type="Texture2D" uid="uid://86xrbwyft4aq" path="res://Skelly Walking.png" id="2_3k2h5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uts07"]
+atlas = ExtResource("2_3k2h5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62sxj"]
+atlas = ExtResource("2_3k2h5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hn1a"]
+atlas = ExtResource("2_3k2h5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qngmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xwx77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uts07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62sxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hn1a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f08u4"]
+size = Vector2(42, 75)
+
+[node name="enemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(172, 71)
+scale = Vector2(2.8125, 2.8125)
+sprite_frames = SubResource("SpriteFrames_qngmw")
+frame = 2
+frame_progress = 0.256571
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(178, 75)
+shape = SubResource("RectangleShape2D_f08u4")
